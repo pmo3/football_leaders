@@ -1,2 +1,3 @@
-# football_leaders
-Show the current leaders of European Football Leagues
+# Football Leaders
+
+Backend application to fetch and serve information about European Football League leaders
