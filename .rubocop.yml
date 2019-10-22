@@ -1,0 +1,16 @@
+inherit_from: ~/.rubocop.yml
+
+Documentation:
+  Enabled: false
+
+AllCops:
+  Exclude:
+    - bin/*
+    - db/migrate/*
+    - db/schema.rb
+    - config/**/*
+    - Gemfile
+
+# rspec blocks will be longer
+Metrics/BlockLength:
+  ExcludedMethods: ['describe', 'context', 'scenario', 'feature']
