@@ -5,14 +5,12 @@ class FootballApiService
 
   BASE_URL = "https://api-football-v1.p.rapidapi.com/v2".freeze
 
-  def get_leagues_json
+  def get_leagues_json(season="2019")
     response = request leagues_url
-    response.body
   end
 
   def get_standings_json_for league_id
     response = request standings_url(league_id)
-    response.body
   end
 
   private
@@ -21,8 +19,8 @@ class FootballApiService
     ENV["rapidapi_key"]
   end
 
-  def leagues_url
-    "#{BASE_URL}/leagues"
+  def leagues_url(season="2019")
+    "#{BASE_URL}/leagues/season/#{season}"
   end
 
   def standings_url league_id

@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_21_221658) do
+ActiveRecord::Schema.define(version: 2019_10_24_134109) do
 
-  create_table "countries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "leagues", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
-    t.string "top_league"
+    t.string "country"
     t.float "lat"
     t.float "lng"
     t.datetime "created_at", precision: 6, null: false
@@ -22,11 +22,20 @@ ActiveRecord::Schema.define(version: 2019_10_21_221658) do
   end
 
   create_table "map_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.bigint "country_id", null: false
+    t.bigint "league_id", null: false
     t.integer "size"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["country_id"], name: "index_map_items_on_country_id"
+    t.index ["league_id"], name: "index_map_items_on_league_id"
+  end
+
+  create_table "rankings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "team_id", default: 1
+    t.bigint "league_id", default: 1
+    t.integer "rank"
+    t.date "date"
+    t.index ["league_id"], name: "index_rankings_on_league_id"
+    t.index ["team_id"], name: "index_rankings_on_team_id"
   end
 
   create_table "teams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -35,7 +44,12 @@ ActiveRecord::Schema.define(version: 2019_10_21_221658) do
     t.string "color"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "league_id", null: false
+    t.index ["league_id"], name: "index_teams_on_league_id"
   end
 
-  add_foreign_key "map_items", "countries"
+  add_foreign_key "map_items", "leagues"
+  add_foreign_key "rankings", "leagues"
+  add_foreign_key "rankings", "teams"
+  add_foreign_key "teams", "leagues"
 end

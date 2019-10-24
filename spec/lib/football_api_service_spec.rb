@@ -5,9 +5,9 @@ RSpec.describe FootballApiService do
 
   context "#get_leagues_json" do
     it "makes a request to the leagues url" do
-      stub_request(:get, "https://api-football-v1.p.rapidapi.com/v2/leagues")
+      stub_request(:get, "https://api-football-v1.p.rapidapi.com/v2/leagues/season/2019")
       service.get_leagues_json
-      expect(WebMock).to have_requested(:get, "https://api-football-v1.p.rapidapi.com/v2/leagues").with(headers: {"x-rapidapi-key" => ENV['rapidapi_key']})
+      expect(WebMock).to have_requested(:get, "https://api-football-v1.p.rapidapi.com/v2/leagues/season/2019").with(headers: {"x-rapidapi-key" => ENV['rapidapi_key']})
     end
   end
 

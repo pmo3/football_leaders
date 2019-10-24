@@ -11,6 +11,6 @@ RSpec.describe MapItem, type: :model do
   end
 
   context "associations" do
-    it { should belong_to :country}
+    it { should belong_to :league}
   end
 end

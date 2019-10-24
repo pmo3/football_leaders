@@ -31,6 +31,7 @@ group :test do
   gem "shoulda-matchers", "~> 3.1"
   gem "fuubar"
   gem "simplecov", require: false
+  gem "webmock"
 end
 
 group :development, :test do
@@ -50,4 +51,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "blueprinter"
 gem "figaro"
-gem "webmock"
+gem "interactor", "~> 3.0"
