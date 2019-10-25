@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <td>League ID</td>
+    <td>Status Code</td>
+    <td>Message</td>
+  </tr>
+  <% @failed_interactors.each do |interactor| %>
+    <tr>
+      <td><%= interactor.league.id %></td>
+      <td><%= interactor.code %></td>
+      <td><%= interactor.message %></td>
+    </tr>
+  <% end %>
+</table>

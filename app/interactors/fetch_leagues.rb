@@ -20,9 +20,6 @@ class FetchLeagues
     countries = League.by_country
     json.each do |league|
       country_name = league["country"]
-      if country_name == "France"
-        byebug
-      end
       next unless countries[country_name]
       top_league = countries[country_name].first
       if league["name"] == top_league.name

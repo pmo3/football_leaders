@@ -52,3 +52,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "blueprinter"
 gem "figaro"
 gem "interactor", "~> 3.0"
+gem "rack-cors"
