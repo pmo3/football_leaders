@@ -10,4 +10,8 @@ RSpec.describe Team, type: :model do
       expect(subject.valid?).to be true
     end
   end
+
+  context "associations" do
+    it { should belong_to(:league) }
+  end
 end

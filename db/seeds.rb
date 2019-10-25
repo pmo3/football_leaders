@@ -16,6 +16,6 @@ countries = [
 ]
 
 countries.each do |data|
-  league = League.first_or_create(data.except(:size))
-  MapItem.first_or_create(league: league, size: data[:size])
+  league = League.where(data.except(:size)).first_or_create
+  MapItem.where(league: league, size: data[:size]).first_or_create
 end
