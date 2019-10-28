@@ -10,4 +10,8 @@ class League < ApplicationRecord
   def league_leader
     rankings.league_leader
   end
+
+  def current_standings
+    rankings.current
+  end
 end

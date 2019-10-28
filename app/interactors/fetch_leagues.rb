@@ -22,7 +22,7 @@ class FetchLeagues
       country_name = league["country"]
       next unless countries[country_name]
       top_league = countries[country_name].first
-      if league["name"] == top_league.name
+      if league["name"].strip == top_league.name
         top_league.api_id = league["league_id"]
         leagues << top_league
       end

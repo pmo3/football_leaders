@@ -14,7 +14,7 @@ RSpec.describe MapItemBlueprint do
 
   context "associated attributes" do
     before do
-      allow(league).to receive(:league_leader).and_return(FactoryBot.create(:ranking, team: team))
+      allow(league).to receive(:league_leader).and_return(FactoryBot.create(:ranking, team: team, date: Date.current))
     end
     it "includes the league name" do
       expect(subject["league"]["name"]).to eq map_item.league.name

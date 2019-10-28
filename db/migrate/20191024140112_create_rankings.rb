@@ -4,7 +4,7 @@ class CreateRankings < ActiveRecord::Migration[6.0]
       t.references :team, null: false, foreign_key: true
       t.references :league, null: false, foreign_key: true
       t.integer :rank
-      t.date :date, default: Date.today
+      t.date :date, default: Date.current
       t.integer :points
 
       t.timestamps

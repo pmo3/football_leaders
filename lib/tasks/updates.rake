@@ -8,6 +8,7 @@ namespace :update do
       unless result.success?
         failures << result
       end
+      sleep 1
     end
   end
 end
