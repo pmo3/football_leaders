@@ -14,4 +14,8 @@ class League < ApplicationRecord
   def current_standings
     rankings.current
   end
+
+  def normalized_country
+    geo_country || country
+  end
 end

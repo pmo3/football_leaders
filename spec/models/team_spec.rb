@@ -14,4 +14,11 @@ RSpec.describe Team, type: :model do
   context "associations" do
     it { should belong_to(:league) }
   end
+
+  describe "#ensure_hex" do
+    let(:team) { FactoryBot.create(:team, color: "ffffff") }
+    it "saves a team color with the leading # if it's not included" do
+      expect(team.reload.color).to eq "#ffffff"
+    end
+  end
 end

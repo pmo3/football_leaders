@@ -2,6 +2,7 @@ countries = [
   {
     country: "England",
     name: "Premier League",
+    geo_country: "United Kingdom",
     lat: 52.3555,
     lng: -1.1743,
     size: 40
