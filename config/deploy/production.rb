@@ -17,9 +17,9 @@
 # property set. Specify the username and a domain or IP for the server.
 # Don't use `:all`, it's a meta role.
 
-role :app, %w{ENV["production_deploy_url"}
-role :web, %w{ENV["production_deploy_url"}
-role :db,  %w{ENV["production_deploy_url"}
+role :app, %w{footballleaders@159.89.34.70}
+role :web, %w{footballleaders@159.89.34.70}
+role :db,  %w{footballleaders@159.89.34.70}
 
 
 
