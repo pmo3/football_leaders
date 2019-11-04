@@ -11,4 +11,14 @@ namespace :update do
       sleep 1
     end
   end
+
+  desc "fetch and assign team colors" do
+    task colors: :environment do
+      leagues = League.all
+      leagues.each do |league|
+        leader = league.rankings.league_leader.team
+        SetTeamColor.call(team: leader)
+      end
+    end
+  end
 end

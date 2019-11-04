@@ -59,3 +59,4 @@ gem "figaro"
 gem "interactor", "~> 3.0"
 gem "rack-cors"
 gem "miro"
+gem "whenever", require: false
