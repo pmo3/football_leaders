@@ -12,7 +12,7 @@ namespace :update do
     end
   end
 
-  desc "fetch and assign team colors" do
+  desc "fetch and assign team colors"
     task colors: :environment do
       leagues = League.all
       leagues.each do |league|
